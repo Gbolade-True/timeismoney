@@ -10,6 +10,8 @@ $msgClass = '';
 if (filter_has_var(INPUT_POST, 'submit')) {
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	if (!empty($email)) {
+		$msg = 'You have subscribed successfully';
+		$msgClass = 'alert-success';
 		if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 			$msg = 'Please use a valid email';
 			$msgClass = 'alert-danger';
