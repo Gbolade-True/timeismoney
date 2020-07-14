@@ -12,30 +12,30 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 	if (!empty($email)) {
 		$msg = 'You have subscribed successfully';
 		$msgClass = 'alert-success';
-		// if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-		// 	$msg = 'Please use a valid email';
-		// 	$msgClass = 'alert-danger';
-		// } else {
-		// 	$toEmail = $email;
-		// 	$subject = 'Subscription Confirmation';
-		// 	$body = '<h2>Thank you for Subscribing to our site </h2>
+		if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+			$msg = 'Please use a valid email';
+			$msgClass = 'alert-danger';
+		} else {
+			$toEmail = $email;
+			$subject = 'Subscription Confirmation';
+			$body = '<h2>Thank you for Subscribing to our site </h2>
 					
-		// 			<p>You will be receiving a follow up email very soon.</p><br/>
-		// 			<p>Thank you.</p>';
-		// 	$headers = "MIME-Version: 1.0" . "\r\n";
-		// 	$headers .= "Content-Type:text/html;charset=UTF-8" . "
-		// 			\r\n";
-		// 	$headers .= "From: Time is Money!";
+					<p>You will be receiving a follow up email very soon.</p><br/>
+					<p>Thank you.</p>';
+			$headers = "MIME-Version: 1.0" . "\r\n";
+			$headers .= "Content-Type:text/html;charset=UTF-8" . "
+					\r\n";
+			$headers .= "From: Time is Money!";
 
 
-		// 	if (mail($toEmail, $subject, $body, $headers)) {
-		// 		$msg = 'Success... We have sent you an email';
-		// 		$msgClass = 'alert-success';
-		// 	} else {
-		// 		$msg = 'Your email has not been sent...';
-		// 		$msgClass = 'alert-danger';
-		// 	}
-		// }
+			if (mail($toEmail, $subject, $body, $headers)) {
+				$msg = 'Success... We have sent you an email';
+				$msgClass = 'alert-success';
+			} else {
+				$msg = 'Your email has not been sent...';
+				$msgClass = 'alert-danger';
+			}
+		}
 	} else {
 		$msg = 'Please fill in the field';
 		$msgClass = 'alert-danger';
