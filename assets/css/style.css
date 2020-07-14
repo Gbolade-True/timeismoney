@@ -268,7 +268,7 @@ b {
   }
 
   .app-info .red-line {
-    height: 240px;
+    height: 190px;
     width: 10px;
     margin-left: 20px;
     background-color: #d20000;
@@ -287,8 +287,8 @@ b {
     color: #ffffff;
   }
   b {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 32px;
+    line-height: 32px;
   }
   .launching .countdown {
     width: 100%;

@@ -90,7 +90,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 				<?php endif; ?>
 				<div class="email-reg">
 					<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-						<input type="email" name="email" id="search-str" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" />
+						<input type="email" placeholder="Enter your email" name="email" id="search-str" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" />
 						<button name="submit" type="submit">Submit</button>
 					</form>
 				</div>
