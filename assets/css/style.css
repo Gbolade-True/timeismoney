@@ -17,12 +17,11 @@ body {
   background-size: cover;
 }
 section {
-  min-height: 100vh;
+  
 }
 
 /* Launching Section */
 .launching {
-  min-height: 100vh;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -32,7 +31,7 @@ section {
   height: 100px;
 }
 b {
-  font-size: 50px;
+  font-size: 40px;
 }
 .launching .app-info {
   margin-top: 50px;
@@ -142,8 +141,7 @@ b {
 
 /* App-Preview Section */
 .app-preview {
-  min-height: 100vh;
-  margin-top: 200px;
+  margin-top: 100px;
   position: relative;
   overflow: hidden;
 }
@@ -182,27 +180,27 @@ b {
 
 /* About-Us Section */
 .about-us {
-  min-height: 100vh;
   background-image: url("../images/Rectangle\ 74.png"),
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 1400px 500px;
+  background-size: cover;
   position: relative;
 }
 
 .about-info1 .red-line {
-  height: 200px;
+  height: 180px;
   width: 10px;
-  margin-top: 70px;
+  margin-right: 20px;
+  margin-top: 120px;
   margin-left: 20px;
   background-color: #d20000;
 }
 .about-info2 .red-line {
-  height: 200px;
+  height: 160px;
   width: 10px;
-  margin-top: -30px;
+  margin-top: 0px;
   margin-left: 20px;
   margin-right: 20px;
   background-color: #d20000;
@@ -214,7 +212,7 @@ b {
 }
 .about-us .about-info1 p {
   margin-right: auto;
-  margin-top: 120px;
+  margin-top: 150px;
   margin-bottom: 50px;
   width: 450px;
   height: auto;
@@ -222,13 +220,13 @@ b {
   font-weight: normal;
   font-size: 24px;
   line-height: 30px;
-  text-align: right;
+  text-align: left;
   letter-spacing: 0.04em;
   color: #ffffff;
 }
 .about-us .about-info2 p {
   margin-left: auto;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-bottom: 50px;
   width: 450px;
   height: auto;
@@ -242,7 +240,6 @@ b {
 }
 
 .stay-connected {
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -268,7 +265,7 @@ b {
   }
 
   .app-info .red-line {
-    height: 190px;
+    height: 160px;
     width: 10px;
     margin-left: 20px;
     background-color: #d20000;
@@ -287,8 +284,8 @@ b {
     color: #ffffff;
   }
   b {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 24px;
+    line-height: 24px;
   }
   .launching .countdown {
     width: 100%;
@@ -359,7 +356,7 @@ b {
   }
   .sub h1 {
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 24px;
     line-height: 24px;
     text-align: center;
@@ -370,7 +367,7 @@ b {
   /* App-Preview Section */
   .app-preview {
     min-height: 100vh;
-    margin-top: 200px;
+    margin-top: 0px;
     position: relative;
     overflow: hidden;
   }
@@ -398,8 +395,8 @@ b {
     margin-bottom: 60px;
   }
   .app-images img {
-    height: 589px;
-    width: 323px;
+    height: 500px;
+    width: 250px;
   }
 
   .app-images img:hover {
@@ -410,20 +407,20 @@ b {
   /* About-Us Section */
 
   .about-us {
-    min-height: 100vh;
     background-image: url("../images/Rectangle\ 74.png"),
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-blend-mode: overlay;
     background-position-x: 0rem;
     background-repeat: no-repeat;
-    background-size: 768px 300px;
+    background-size: cover;
     position: relative;
   }
 
   .about-info1 .red-line {
     height: 100px;
     width: 10px;
-    margin-top: 190px;
+    margin-right:20px;
+    margin-top: 100px;
     margin-left: 20px;
     background-color: #d20000;
   }
@@ -442,7 +439,7 @@ b {
   }
   .about-us .about-info1 p {
     margin-right: auto;
-    margin-top: 200px;
+    margin-top: 110px;
     margin-bottom: 50px;
     width: 250px;
     height: auto;
@@ -450,13 +447,13 @@ b {
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
-    text-align: right;
+    text-align: left;
     letter-spacing: 0.04em;
     color: #ffffff;
   }
   .about-us .about-info2 p {
     margin-left: auto;
-    margin-top: -20px;
+    margin-top: -10px;
     margin-bottom: 50px;
     width: 250px;
     height: auto;
@@ -474,4 +471,102 @@ b {
     position: relative;
     overflow: hidden;
   }
+}
+
+@media screen and (min-width:300px) and (max-width: 400px) {
+     /* About-Us Section */
+
+  .about-us {
+    background-image: url("../images/Rectangle\ 74.png"),
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-blend-mode: overlay;
+    background-position-x: 0rem;
+    background-repeat: no-repeat;
+    background-size: 600px 400px;
+    position: relative;
+  }
+
+  .about-info1 .red-line {
+    height: 100px;
+    width: 10px;
+    margin-right: 20px;
+    margin-top: 40px;
+    margin-left: 20px;
+    background-color: #d20000;
+  }
+  .about-info2 .red-line {
+    height: 80px;
+    width: 10px;
+    margin-top: -10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #d20000;
+  }
+
+  .about-us .about-info1,
+  .about-info2 {
+    display: flex;
+  }
+  .about-us .about-info1 p {
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    width: 250px;
+    height: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+  }
+  .about-us .about-info2 p {
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    width: 250px;
+    height: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: right;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+  }
+
+  .app-images img {
+    height: 450px;
+    width: 200px;
+    margin-left: 20px;
+  }
+  .launching .app-info p {
+    margin-left: auto;
+    width: 220px;
+    height: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+  }
+  b {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+}
+
+span{
+  opacity: 0.8;
+  color: #d20000;
+  transition: all 0.4s ease;
+}
+
+span.anim{
+  opacity: 0.8;
+  color: #FFFFFF
 }

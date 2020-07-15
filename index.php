@@ -59,15 +59,15 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	<title>Document</title>
 
 
 </head>
 
 <body>
-	<div class="Landing-Page">
+	<div class="Landing-Page" id="fullpage">
 		<section class="launching">
 			<div class="logo">
 				<img src="./assets/images/logo.png" alt="" />
@@ -81,7 +81,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 				<div class="red-line"></div>
 			</div>
 			<div class="countdown">
-				<h1>LAUNCHING IN</h1>
+				<h1 class="fancy">LAUNCHING IN...</h1>
 				<div class="counter">
 					<h1 id="counter"></h1>
 				</div>
@@ -110,7 +110,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 		<section class="app-preview">
 			<h1>APP PREVIEW</h1>
 
-			<div class="app-images">
+			<div class="app-images container">
 				<div class="app-image">
 					<img src="./assets/images/Desktop - 1APP.png" alt="" />
 				</div>
@@ -139,16 +139,12 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 			<div class="about-info1">
 				<div class="red-line"></div>
 				<p>
-					TIME IS MONEY
-					A free Salary Calculating Website That Helps You to Find the Right
-					Job You Deserve Based on Your Skills
+					We have successfully created a bot that estimates your potential salary per gour with respect to your skills.
 				</p>
 			</div>
 			<div class="about-info2">
 				<p>
-					TIME IS MONEY
-					A free Salary Calculating Website That Helps You to Find the Right
-					Job You Deserve Based on Your Skills
+				We also helps you to find your deservable job and keeps you updates with latest job news.
 				</p>
 				<div class="red-line"></div>
 			</div>
@@ -157,8 +153,11 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 		<!-- <section class="stay-connected"></section> -->
 	</div>
 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<script src="./assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="./assets/js/animateP.js"></script>
 	<script src="./assets/js/countdown.js"></script>
 </body>
 
