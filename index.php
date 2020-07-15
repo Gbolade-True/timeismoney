@@ -59,8 +59,12 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="./assets/css/clock.css" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Sansita&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 	<title>Document</title>
 
 
@@ -107,34 +111,79 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
 		</section>
 
+		<section class="clocko">
+			<div id="clock">
+				<ul id="time">
+
+					<li class="ts"><i class="fa fa-usd" aria-hidden="true"></i></li>
+					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
+					<li class="ts"><i class="fa fa-usd" aria-hidden="true"></i></li>
+					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
+					<li class="ts"><i class="fa fa-usd" aria-hidden="true"></i></li>
+					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
+					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
+					<li>Time</li>
+					<li>is</li>
+					<li>Money</li>
+				</ul>
+				<div id="second">Time</div>
+				<div id="minute">is</div>
+				<div id="hour">Money</div>
+			</div>
+
+		</section>
+
 		<section class="app-preview">
 			<h1>APP PREVIEW</h1>
 
-			<div class="app-images container">
-				<div class="app-image">
-					<img src="./assets/images/Desktop - 1APP.png" alt="" />
-				</div>
-				<div class="app-image">
-					<img src="./assets/images/Desktop - 2APP.png" alt="" />
-				</div>
-				<div class="app-image">
-					<img src="./assets/images/Desktop - 3APP.png" alt="" />
-				</div>
-				<div class="app-image">
-					<img src="./assets/images/Desktop - 7APP.png" alt="" />
-				</div>
-				<div class="app-image">
-					<img src="./assets/images/Desktop - 4APP.png" alt="" />
-				</div>
-				<div class="app-image">
-					<img src="./assets/images/Desktop - 5APP.png" alt="" />
-				</div>
-				<!-- <div class="app-image">
-					<img src="./assets/images/Desktop - 6APP.png" alt="" />
-				</div> -->
-			</div>
+			<section id="section-carousel">
+				<ul class="carousel">
+					<li class="items main-pos" id="1">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 1APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items right-pos" id="2">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 2APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items back-pos" id="3">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 3APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items back-pos" id="4">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 7APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items back-pos" id="5">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 4APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items back-pos2" id="6">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 5APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items left-pos" id="7">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 6APP.png" alt="" />
+						</div>
+					</li>
+				</ul>
+				<span>
+					<i class="fa fa-chevron-left" id="prev" aria-hidden="true"></i>
+					<i class="fa fa-chevron-right" id="next" aria-hidden="true"></i>
+				</span>
+			</section>
 		</section>
 
+		<div class="about-header">
+			<h1>ABOUT US</h1>
+		</div>
 		<section class="about-us">
 			<div class="about-info1">
 				<div class="red-line"></div>
@@ -144,9 +193,31 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 			</div>
 			<div class="about-info2">
 				<p>
-				We also helps you to find your deservable job and keeps you updates with latest job news.
+					We also helps you to find your deservable job and keeps you updates with latest job news.
 				</p>
 				<div class="red-line"></div>
+			</div>
+		</section>
+		<div class="about-footer">
+			<p>Email: timeismoney@hng.tech</p>
+		</div>
+		<section class="stay-connected">
+			<div class="follow">
+				<h1>Follow us on</h1>
+			</div>
+			<div class="social-icons">
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+				<i class="fa fa-facebook" aria-hidden="true"></i>
+				<i class="fa fa-twitter" aria-hidden="true"></i>
+				<i class="fa fa-linkedin" aria-hidden="true"></i>
+			</div>
+			<div class="stay-tuned">
+				<h1>STAY TUNED TO KNOW MORE</h1>
+			</div><br />
+
+			<div class="line"></div>
+			<div class="copyright">
+				<h1>&copy; Copyright 2020 | TIME IS MONEY</h1>
 			</div>
 		</section>
 
@@ -154,6 +225,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 	</div>
 
 	<script src="./assets/js/main.js"></script>
+	<script src="./assets/js/clock.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
