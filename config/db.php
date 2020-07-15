@@ -1,10 +1,14 @@
 <?php
+    $hostname='localhost';
+    $username='id14343072_timeismoney';
+    $password='Gbolalphasuperman4*';
 
-    $conn = mysqli_connect('localhost', 'root', 'Gbolalpha4*', 'timeismoney');
+    $conn = new mysqli($hostname, $username, $password);
 
     // Check the connection
-    if(mysqli_connect_errno()){
-        // Connection failed
-        echo 'Failed to connect to MySQL '. mysqli_connect_errno();
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } else {
+        echo "Connected successfully";
     }
 ?>

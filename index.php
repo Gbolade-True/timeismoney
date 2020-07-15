@@ -12,44 +12,44 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 	if (!empty($email)) {
 		$msg = 'You have subscribed successfully';
 		$msgClass = 'alert-success';
-		if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-			$msg = 'Please use a valid email';
-			$msgClass = 'alert-danger';
-		} else {
-			$toEmail = $email;
-			$subject = 'Subscription Confirmation';
-			$body = '<h2>Thank you for Subscribing to our site </h2>
-					
-					<p>You will be receiving a follow up email very soon.</p><br/>
-					<p>Thank you.</p>';
-			$headers = "MIME-Version: 1.0" . "\r\n";
-			$headers .= "Content-Type:text/html;charset=UTF-8" . "
-					\r\n";
-			$headers .= "From: Time is Money!";
+		// 	if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+		// 		$msg = 'Please use a valid email';
+		// 		$msgClass = 'alert-danger';
+		// 	} else {
+		// 		$toEmail = $email;
+		// 		$subject = 'Subscription Confirmation';
+		// 		$body = '<h2>Thank you for Subscribing to our site </h2>
+
+		// 				<p>You will be receiving a follow up email very soon.</p><br/>
+		// 				<p>Thank you.</p>';
+		// 		$headers = "MIME-Version: 1.0" . "\r\n";
+		// 		$headers .= "Content-Type:text/html;charset=UTF-8" . "
+		// 				\r\n";
+		// 		$headers .= "From: Time is Money!";
 
 
-			if (mail($toEmail, $subject, $body, $headers)) {
-				$msg = 'Success... We have sent you an email';
-				$msgClass = 'alert-success';
-			} else {
-				$msg = 'Your email has not been sent...';
-				$msgClass = 'alert-danger';
-			}
-		}
+		// 		if (mail($toEmail, $subject, $body, $headers)) {
+		// 			$msg = 'Success... We have sent you an email';
+		// 			$msgClass = 'alert-success';
+		// 		} else {
+		// 			$msg = 'Your email has not been sent...';
+		// 			$msgClass = 'alert-danger';
+		// 		}
+		// 	}
 	} else {
 		$msg = 'Please fill in the field';
 		$msgClass = 'alert-danger';
 	}
-	// $query = "INSERT INTO emails(email) VALUES('$email')";
-	// if(mysqli_query($conn, $query)) {
-	// 	header('Location: '.ROOT_URL. '');
-	// 	$msg = 'Success... We have sent you an email';
-	// 	$msgClass = 'alert-success';
-	// } else {
-	// 	echo 'ERROR: '. mysqli_error($conn);
-	// 	$msg = 'Your email has not been sent...';
-	// 	$msgClass = 'alert-danger';
-	// }
+	$query = "INSERT INTO `Emails` (`id`, `emails`) VALUES (NULL, $email)";
+	if(mysqli_query($conn, $query)) {
+		// header('Location: '.ROOT_URL. '');
+		$msg = 'You have subscribed successfully';
+		$msgClass = 'alert-success';
+	} else {
+		echo 'ERROR: '. mysqli_error($conn);
+		$msg = 'Your email has not been sent...';
+		$msgClass = 'alert-danger';
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -60,13 +60,13 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
 	<link rel="stylesheet" href="./assets/css/clock.css" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Sansita&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
 	<title>Document</title>
-
 
 </head>
 
@@ -226,11 +226,15 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
 	<script src="./assets/js/main.js"></script>
 	<script src="./assets/js/clock.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="./assets/js/animateP.js"></script>
 	<script src="./assets/js/countdown.js"></script>
+	<script>
+		AOS.init();
+	</script>
 </body>
 
 </html>

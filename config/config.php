@@ -1,6 +1,15 @@
 <?php 
-    define('ROOT_URL', 'http://localhost/PHP-PROJECTS/HNGSuperProject/');
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASS', 'Gbolalpha4*');
-    define('DB_NAME', 'timeismoney');
+    $hostname='localhost';
+    $username='id14343072_timeismoney';
+    $password='Gbolalphasuperman4*';
+
+    try{
+        $db = new PDO("mysql:host=$hostname;dbname=id14343072_timeismoney",$username,$password);
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    }
+    catch(Exception $e) {
+        echo "Connection error: ".$e->getMessage()();
+    }
+?>
