@@ -121,6 +121,7 @@ b {
   background: red;
   font-size: 24px;
   border: none;
+  outline: 0!important;
   border-radius: 50px;
 }
 
@@ -345,6 +346,7 @@ b {
     background: red;
     font-size: 14px;
     border: none;
+    outline: 0!important;
     border-radius: 50px;
   }
 
