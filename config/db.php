@@ -2,17 +2,19 @@
     $hostname='localhost';
     $username='id14343072_timeismoneyy';
     $password='Gbolalphasuperman4*';
+    $dbname='id14343072_timeismoney';
 
-    $conn = mysqli_connect($hostname, $username, $password);
+    $conn = new mysqli($hostname, $username, $password, $dbname);
 
     // Check the connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-    else {
-        echo "Connected successfully";
-    }
+    //  else {
+    //      echo "Connected successfully";
+    //  }
 ?>
+
 <!-- 
 // $toEmail = $email;
 			// $subject = 'Subscription Confirmation';
