@@ -1,7 +1,6 @@
 <?php
 require('config/db.php');
 require('config/config.php');
-// Message variables
 
 
 $msg = '';
@@ -10,45 +9,31 @@ $msgClass = '';
 if (filter_has_var(INPUT_POST, 'submit')) {
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	if (!empty($email)) {
-		$msg = 'You have subscribed successfully';
-		$msgClass = 'alert-success';
-		// 	if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-		// 		$msg = 'Please use a valid email';
-		// 		$msgClass = 'alert-danger';
-		// 	} else {
-		// 		$toEmail = $email;
-		// 		$subject = 'Subscription Confirmation';
-		// 		$body = '<h2>Thank you for Subscribing to our site </h2>
-
-		// 				<p>You will be receiving a follow up email very soon.</p><br/>
-		// 				<p>Thank you.</p>';
-		// 		$headers = "MIME-Version: 1.0" . "\r\n";
-		// 		$headers .= "Content-Type:text/html;charset=UTF-8" . "
-		// 				\r\n";
-		// 		$headers .= "From: Time is Money!";
-
-
-		// 		if (mail($toEmail, $subject, $body, $headers)) {
-		// 			$msg = 'Success... We have sent you an email';
-		// 			$msgClass = 'alert-success';
-		// 		} else {
-		// 			$msg = 'Your email has not been sent...';
-		// 			$msgClass = 'alert-danger';
-		// 		}
-		// 	}
+		if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+			$msg = 'Please use a valid email';
+			$msgClass = 'alert-danger';
+		} else {
+			$msg = 'You have subscribed successfully';
+			$msgClass = 'alert-success';
+		}
 	} else {
 		$msg = 'Please fill in the field';
 		$msgClass = 'alert-danger';
 	}
-	$query = "INSERT INTO `Emails` (`id`, `emails`) VALUES (NULL, $email)";
-	if(mysqli_query($conn, $query)) {
-		// header('Location: '.ROOT_URL. '');
-		$msg = 'You have subscribed successfully';
-		$msgClass = 'alert-success';
-	} else {
-		echo 'ERROR: '. mysqli_error($conn);
-		$msg = 'Your email has not been sent...';
+	$select = mysqli_query($conn, "SELECT `emails` FROM `Emails` WHERE `emails` = '".$_POST['email']."'" );
+	if (mysqli_num_rows($select)) {
+	    $msg = 'This email has been registered';
 		$msgClass = 'alert-danger';
+	};
+	$query = "INSERT INTO Emails (id, emails) VALUES (NULL, '$email')";
+	if (mysqli_query($conn, $query)) {
+	    echo 'Success';
+// 		$msg = 'You have subscribed successfully';
+// 		$msgClass = 'alert-success';
+	} else {
+	    echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
+// 		$msg = 'Your email has not been sent...';
+// 		$msgClass = 'alert-danger';
 	}
 }
 ?>
@@ -77,16 +62,16 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 				<img src="./assets/images/logo.png" alt="" />
 			</div>
 			<div class="app-info">
-				<p>
+				<p data-aos="fade-left" data-aos-duration="2000">
 					<b>TIME IS MONEY</b><br /><br />
-					A free Salary Calculating Website That Helps You to Find the Right
-					Job You Deserve Based on Your Skills
+					An application that estimates your potential hourly income based on your
+					current skillset and helps in finding job oppurtunities!
 				</p>
 				<div class="red-line"></div>
 			</div>
 			<div class="countdown">
 				<h1 class="fancy">LAUNCHING IN...</h1>
-				<div class="counter">
+				<div class="counter" data-aos="fade-right" data-aos-duration="2000">
 					<h1 id="counter"></h1>
 				</div>
 				<?php if ($msg != '') : ?>
@@ -95,46 +80,45 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 					</div>
 				<?php endif; ?>
 				<div class="email-reg">
-					<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-						<input type="email" placeholder="Enter your email" name="email" id="search-str" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" />
-						<button name="submit" type="submit">Submit</button>
+					<form method="post" action="">
+						<input type="email" id="email-form" placeholder="Enter your email" name="email" id="search-str" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" />
+						<button class="email-button" name="submit" type="submit">Submit</button>
 					</form>
 				</div>
 
 				<div class="sub">
 					<h1>
-						Subscribe to get latest Information and Launching updates of our
-						app
+						Subscribe to get latest information and launching updates
 					</h1>
 				</div>
 			</div>
 
 		</section>
 
-		<section class="clocko">
+		<section class="clocko" data-aos="zoom-in" data-aos-duration="1500">
 			<div id="clock">
 				<ul id="time">
 
-					<li class="ts"><i class="fa fa-usd" aria-hidden="true"></i></li>
-					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
-					<li class="ts"><i class="fa fa-usd" aria-hidden="true"></i></li>
-					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
-					<li class="ts"><i class="fa fa-usd" aria-hidden="true"></i></li>
-					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
-					<li class="ts"><i class="fa fa-gbp" aria-hidden="true"></i></li>
-					<li>Time</li>
-					<li>is</li>
-					<li>Money</li>
+					<p class="ts t1"><i class="fa fa-usd" aria-hidden="true"></i></p>
+					<p class="ts t2"><i class="fa fa-gbp" aria-hidden="true"></i></p>
+					<p class="ts t3"><i class="fa fa-eur" aria-hidden="true"></i></p>
+					<p class="ts t4"><i class="fa fa-inr" aria-hidden="true"></i></p>
 				</ul>
-				<div id="second">Time</div>
-				<div id="minute">is</div>
-				<div id="hour">Money</div>
+				<div id="second">
+					<p style="margin-left: 8px">Time</p>
+				</div>
+				<div id="minute">
+					<p style="margin-left: 8px">is</p>
+				</div>
+				<div id="hour">
+					<p style="margin-left: 8px">Money</p>
+				</div>
 			</div>
 
 		</section>
 
 		<section class="app-preview">
-			<h1>APP PREVIEW</h1>
+			<h1 data-aos="zoom-in-up">APP PREVIEW</h1>
 
 			<section id="section-carousel">
 				<ul class="carousel">
@@ -163,7 +147,12 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 							<img src="./assets/images/Desktop - 4APP.png" alt="" />
 						</div>
 					</li>
-					<li class="items back-pos2" id="6">
+					<li class="items back-pos" id="6">
+						<div class="app-image">
+							<img src="./assets/images/Desktop - 5APP.png" alt="" />
+						</div>
+					</li>
+					<li class="items back-pos2" id="">
 						<div class="app-image">
 							<img src="./assets/images/Desktop - 5APP.png" alt="" />
 						</div>
@@ -182,34 +171,34 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 		</section>
 
 		<div class="about-header">
-			<h1>ABOUT US</h1>
+			<h1 data-aos="zoom-in-up">ABOUT US</h1>
 		</div>
 		<section class="about-us">
 			<div class="about-info1">
 				<div class="red-line"></div>
-				<p>
-					We have successfully created a bot that estimates your potential salary per gour with respect to your skills.
+				<p data-aos="flip-left" data-aos-duration="2000">
+					We have successfully created a bot that estimates your potential salary per hour with respect to your skills.
 				</p>
 			</div>
 			<div class="about-info2">
-				<p>
-					We also helps you to find your deservable job and keeps you updates with latest job news.
+				<p data-aos="flip-right" data-aos-duration="2000">
+					We also help you to find your deservable job and keeps you updated with latest job news.
 				</p>
 				<div class="red-line"></div>
 			</div>
 		</section>
 		<div class="about-footer">
-			<p>Email: timeismoney@hng.tech</p>
+			<p data-aos="fade-right" data-aos-duration="2000">Email: timeismoney@hng.tech</p>
 		</div>
 		<section class="stay-connected">
 			<div class="follow">
 				<h1>Follow us on</h1>
 			</div>
 			<div class="social-icons">
-				<i class="fa fa-instagram" aria-hidden="true"></i>
-				<i class="fa fa-facebook" aria-hidden="true"></i>
-				<i class="fa fa-twitter" aria-hidden="true"></i>
-				<i class="fa fa-linkedin" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true" data-aos="fade-right" data-aos-duration="3000"></i>
+				<i class="fa fa-facebook" aria-hidden="true" data-aos="fade-right" data-aos-duration="3000"></i>
+				<i class="fa fa-twitter" aria-hidden="true" data-aos="fade-left" data-aos-duration="3000"></i>
+				<i class="fa fa-linkedin" aria-hidden="true" data-aos="fade-left" data-aos-duration="3000"></i>
 			</div>
 			<div class="stay-tuned">
 				<h1>STAY TUNED TO KNOW MORE</h1>

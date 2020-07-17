@@ -24,3 +24,33 @@ function complete() {
     clearInterval(timer);
     timer = null;
 }
+
+const alertGo = document.querySelector('.alert');
+
+function clearAlert() {
+    if (alertGo) {
+        alertGo.style.display ="none"
+    }
+}
+
+setTimeout(clearAlert, 5000);
+
+const emailField = document.querySelector('#email-form');
+const submitButton = document.querySelector('.email-button');
+function returnToPreviousPage() {
+    window.history.back();
+}
+function clearField() {
+    if (alertGo.classList.contains('alert-success')) {
+        emailField.value="";
+    }
+    if (alertGo.classList.contains('alert-danger')) {
+        returnToPreviousPage();
+        return false;
+    }
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+}
+
+submitButton.addEventListener('submit', clearField());

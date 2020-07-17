@@ -5,16 +5,18 @@
   box-sizing: border-box;
 }
 
-html,
 body {
   font-family: "Sansita" !important;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  /* background-position-y: -22rem; */
+  height: 100vh;
 }
 
 .Landing-Page {
-  background-image: url("../images/background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 /* Launching Section */
@@ -90,7 +92,6 @@ b {
 .countdown .email-reg {
   display: flex;
   width: 100%;
-  margin: auto;
   align-items: center;
   justify-content: center;
 }
@@ -114,7 +115,7 @@ b {
 
 .email-reg button {
   width: 150px;
-  height: 64px;
+  height: 65px;
   color: white;
   background: red;
   font-size: 24px;
@@ -124,8 +125,8 @@ b {
 }
 
 .sub {
-  padding-top: 100px;
-  width: 70%;
+  padding-top: 50px;
+  width: 60%;
   margin: auto;
 }
 .sub h1 {
@@ -138,6 +139,11 @@ b {
   color: #ffffff;
 }
 
+/* CLOCK */
+
+.clocko {
+  margin-top: 100px;
+}
 /* App-Preview Section */
 .app-preview {
   margin-top: 100px;
@@ -327,7 +333,6 @@ b {
 
 .copyright h1 {
   margin-top: 20px;
-  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -409,7 +414,6 @@ b {
   .countdown .email-reg {
     display: flex;
     width: 100%;
-    margin: auto;
     align-items: center;
     justify-content: center;
   }
@@ -443,7 +447,7 @@ b {
   }
 
   .sub {
-    padding-top: 100px;
+    padding-top: 30px;
     width: 80%;
     margin: auto;
   }
@@ -455,6 +459,11 @@ b {
     text-align: center;
     letter-spacing: 0.04em;
     color: #ffffff;
+  }
+
+  /* CLOCK */
+  .clocko {
+    margin-top: 80px;
   }
 
   /* App-Preview Section */
@@ -743,13 +752,13 @@ b {
 
 span {
   opacity: 0.8;
-  color: #ffffff;
+  color: #d20000;
   transition: all 0.4s ease;
 }
 
 span.anim {
   opacity: 0.8;
-  color: #d20000;
+  color: #ffffff;
 }
 
 /* ***** CAROUSEL WAHALA ***** */

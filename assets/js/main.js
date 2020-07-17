@@ -14,7 +14,7 @@ $('ul, span').hover(
 var items = [];
 var startItem = 1;
 var position = 0;
-var itemCount = $('.carousel li.items').length;
+var itemCount = 7;
 var leftpos = itemCount;
 var resetCount = itemCount;
 

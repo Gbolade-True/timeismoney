@@ -1,6 +1,6 @@
-<?php 
+<!-- <?php 
     $hostname='localhost';
-    $username='id14343072_timeismoney';
+    $username='id14343072_timeismoneyy';
     $password='Gbolalphasuperman4*';
 
     try{
@@ -12,4 +12,4 @@
     catch(Exception $e) {
         echo "Connection error: ".$e->getMessage()();
     }
-?>
+?> -->
