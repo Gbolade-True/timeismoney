@@ -7,7 +7,7 @@
 
 body {
   font-family: "Sansita" !important;
-  background-image: url("../images/background.jpg");
+  background-image: url("/assets/images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -186,7 +186,7 @@ b {
 
 /* About-Us Section */
 .about-us {
-  background-image: url("../images/Rectangle\ 74.png"),
+  background-image: url("/assets/images/Rectangle\ 74.png"),
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-position: center;
@@ -509,7 +509,7 @@ b {
   /* About-Us Section */
 
   .about-us {
-    background-image: url("../images/Rectangle\ 74.png"),
+    background-image: url("/assets/images/Rectangle\ 74.png"),
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-blend-mode: overlay;
     background-position-x: 0rem;
@@ -668,7 +668,7 @@ b {
     color: #ffffff;
   }
   .about-us {
-    background-image: url("../images/Rectangle\ 74.png"),
+    background-image: url("/assets/images/Rectangle\ 74.png"),
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-blend-mode: overlay;
     background-position-x: 0rem;
