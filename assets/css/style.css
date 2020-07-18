@@ -7,16 +7,13 @@
 
 body {
   font-family: "Sansita" !important;
-  background-image: url("/assets/images/background.jpg");
+  background-image: url("assets/images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   /* background-position-y: -22rem; */
   height: 100vh;
-}
-
-.Landing-Page {
 }
 
 /* Launching Section */
@@ -186,7 +183,7 @@ b {
 
 /* About-Us Section */
 .about-us {
-  background-image: url("/assets/images/Rectangle\ 74.png"),
+  background-image: url("assets/images/Rectangle\ 74.png"),
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-position: center;
@@ -509,7 +506,7 @@ b {
   /* About-Us Section */
 
   .about-us {
-    background-image: url("/assets/images/Rectangle\ 74.png"),
+    background-image: url("assets/images/Rectangle\ 74.png"),
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-blend-mode: overlay;
     background-position-x: 0rem;
@@ -668,7 +665,7 @@ b {
     color: #ffffff;
   }
   .about-us {
-    background-image: url("/assets/images/Rectangle\ 74.png"),
+    background-image: url("assets/images/Rectangle\ 74.png"),
       linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-blend-mode: overlay;
     background-position-x: 0rem;
