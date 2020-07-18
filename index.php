@@ -1,6 +1,5 @@
 <?php
 require('config/db.php');
-require('config/config.php');
 // Message variables
 
 
