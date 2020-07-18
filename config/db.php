@@ -1,8 +1,9 @@
 <?php
-    $hostname='localhost';
-    $username='id14343072_timeismoneyy';
-    $password='Gbolalphasuperman4*';
-    $dbname='id14343072_timeismoney';
+
+    $hostname='d9c88q3e09w6fdb2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    $username='la8vx4yjlt5ihg1c';
+    $password='z5avw1e8xslrmblc';
+    $dbname='xuzppneny4r53hhr';
 
     $conn = new mysqli($hostname, $username, $password, $dbname);
 

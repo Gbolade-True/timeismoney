@@ -21,12 +21,12 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 		$msg = 'Please fill in the field';
 		$msgClass = 'alert-danger';
 	}
-	$select = mysqli_query($conn, "SELECT `emails` FROM `Emails` WHERE `emails` = '".$_POST['email']."'" );
+	$select = mysqli_query($conn, "SELECT `email` FROM `Emails` WHERE `email` = '".$_POST['email']."'" );
 	if (mysqli_num_rows($select)) {
 	    $msg = 'This email has been registered';
 		$msgClass = 'alert-danger';
 	};
-	$query = "INSERT INTO Emails (id, emails) VALUES (NULL, '$email')";
+	$query = "INSERT INTO Emails (email) VALUES ('$email')";
 	if (mysqli_query($conn, $query)) {
 	    echo 'Success';
 // 		$msg = 'You have subscribed successfully';
